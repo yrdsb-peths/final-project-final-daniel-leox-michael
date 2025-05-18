@@ -15,5 +15,21 @@ public class Jet extends Actor
     public void act()
     {
         // Add your action code here.
+
+        if(Greenfoot.isKeyDown("left"))
+        {
+          move(-1);  
+        }
+        if(Greenfoot.isKeyDown("Right"))
+        {
+          move(1);  
+        } 
+        shoot();
+    }
+    public void shoot(){
+        if (Greenfoot.isKeyDown("Space")){
+            MyWorld world = (MyWorld) getWorld();
+            world.shootBillet(getX());
+        }
     }
 }
