@@ -13,11 +13,12 @@ public class EnemyJetOne extends Enemy
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
  
-    boolean start = true;
+    SimpleTimer CD = new SimpleTimer();
     public void act()
     {
         removeTouching(Bullet.class);
         moveToPlayer();
+        shoot();
     }
     
     public void moveToPlayer()
@@ -25,5 +26,16 @@ public class EnemyJetOne extends Enemy
         move(1);
         Jet jet = (Jet) getWorld().getObjects(Jet.class).get(0);
         turnTowards(jet.getX(), jet.getY());
+    }
+    public void shoot(){
+        if(CD.millisElapsed()<500)
+        {
+            return;
+        }
+        
+        MyWorld world = (MyWorld) getWorld();
+        world.shootEnemyBillet(getX(),getY());
+        CD.mark();
+        
     }
 }

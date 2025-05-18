@@ -11,6 +11,10 @@ public class MyWorld extends World {
         Bullet bullet = new Bullet();
         addObject(bullet,x,650);
     }
+    public void shootEnemyBillet(int x, int y){
+        EnemyBullet bullet = new EnemyBullet();
+        addObject(bullet,x,y);
+    }
     public void spawnEnemy(int x){
         EnemyJetOne Enemy1 = new EnemyJetOne();
         addObject(Enemy1,x,0);
