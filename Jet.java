@@ -12,6 +12,7 @@ public class Jet extends Actor
      * Act - do whatever the Jet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    SimpleTimer spawn = new SimpleTimer();
     SimpleTimer CD = new SimpleTimer();
     public void act()
     {
@@ -27,8 +28,10 @@ public class Jet extends Actor
             {
               move(1);  
             } 
-            shoot();
+            
         }
+        spawnJet();
+        shoot();
     }
     public void shoot(){
         if(CD.millisElapsed()<500)
@@ -40,5 +43,14 @@ public class Jet extends Actor
             world.shootBillet(getX());
             CD.mark();
         }
+    }
+        public void spawnJet(){
+        if(spawn.millisElapsed()<1000)
+        {
+            return;
+        }
+        MyWorld world = (MyWorld) getWorld();
+        world.spawnEnemy(Greenfoot.getRandomNumber(600));
+        spawn.mark();
     }
 }
