@@ -20,18 +20,19 @@ public class Jet extends Actor
         if(getX()-1>0){
             if(Greenfoot.isKeyDown("left"))
             {
-              move(-1);  
+              move(-3);  
             }
         }
         if(getX()+1<400){
             if(Greenfoot.isKeyDown("Right"))
             {
-              move(1);  
+              move(3);  
             } 
             
         }
         spawnJet();
         shoot();
+        
     }
     public void shoot(){
         if(CD.millisElapsed()<500)
@@ -50,7 +51,7 @@ public class Jet extends Actor
             return;
         }
         MyWorld world = (MyWorld) getWorld();
-        world.spawnEnemy(Greenfoot.getRandomNumber(600));
+        world.spawnEnemy(Greenfoot.getRandomNumber(400));
         spawn.mark();
     }
 }

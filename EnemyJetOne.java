@@ -16,6 +16,7 @@ public class EnemyJetOne extends Enemy
     boolean start = true;
     public void act()
     {
+        removeTouching(Bullet.class);
         moveToPlayer();
     }
     

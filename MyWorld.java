@@ -13,6 +13,6 @@ public class MyWorld extends World {
     }
     public void spawnEnemy(int x){
         EnemyJetOne Enemy1 = new EnemyJetOne();
-        addObject(Enemy1,200,0);
+        addObject(Enemy1,x,0);
     }
 }
