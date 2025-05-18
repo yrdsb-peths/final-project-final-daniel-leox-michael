@@ -16,7 +16,13 @@ public class EnemyJetOne extends Enemy
     boolean start = true;
     public void act()
     {
-        setLocation(getX(), getY()+1);
+        moveToPlayer();
     }
-
+    
+    public void moveToPlayer()
+    {
+        move(1);
+        Jet jet = (Jet) getWorld().getObjects(Jet.class).get(0);
+        turnTowards(jet.getX(), jet.getY());
+    }
 }
