@@ -21,7 +21,6 @@ public class EnemyBullet extends Actor
             newSpawn=false;
         }
         move(10);
-        
         // Add your action code here.
     }
     public void checkPosition(){

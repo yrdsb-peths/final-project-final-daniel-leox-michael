@@ -45,8 +45,9 @@ public class Jet extends Actor
             world.shootBillet(getX());
             CD.mark();
         }
+        getDamage();
     }
-        public void spawnJet(){
+    public void spawnJet(){
         if(spawn.millisElapsed()<1000)
         {
             return;
@@ -54,5 +55,15 @@ public class Jet extends Actor
         MyWorld world = (MyWorld) getWorld();
         world.spawnEnemy(Greenfoot.getRandomNumber(400));
         spawn.mark();
+    }
+    public void getDamage(){
+        if(isTouching(EnemyJetOne.class))
+        {
+            removeTouching(EnemyJetOne.class);
+        }
+        if(isTouching(EnemyBullet.class))
+        {
+            removeTouching(EnemyBullet.class);
+        }
     }
 }
