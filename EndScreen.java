@@ -14,6 +14,7 @@ public class EndScreen extends World
      * Constructor for objects of class EndScreen.
      * 
      */
+    static int coin =0;
     public EndScreen(int coinGetInThisRound)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -22,5 +23,10 @@ public class EndScreen extends World
         addObject(Coin,50,700);
         UpGradeButton upGradeButton = new UpGradeButton();
         addObject(upGradeButton, 350, 650);
+        coin = coinGetInThisRound;
+    }
+    public static void goUpGradeScreen(){
+        UpGradeScreen upGradeScreen = new UpGradeScreen(coin);
+        Greenfoot.setWorld(upGradeScreen);
     }
 }

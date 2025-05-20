@@ -19,6 +19,9 @@ public class UpGradeButton extends Actor
         GreenfootImage image = getImage();
         image.scale(50, 50);
         setImage(image);
-        
+        if(Greenfoot.mouseClicked(this)){
+            EndScreen world = (EndScreen) getWorld();
+            EndScreen.goUpGradeScreen();
+        }
     }
 }
