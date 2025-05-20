@@ -22,12 +22,16 @@ public class StartScreen extends World
     
     public void act()
     {
-        
+        if(Greenfoot.isKeyDown("enter"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }
     }
     
     private void prepare()
     {
-        Label label3 = new Label("Press <space> to Start", 40);
+        Label label3 = new Label("Press <enter> to Start", 40);
         addObject(label3,202,348);
         Label label2 = new Label("Use <-- and --> to Move", 40);
         addObject(label2,205,424);
