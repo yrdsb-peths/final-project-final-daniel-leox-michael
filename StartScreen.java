@@ -17,5 +17,19 @@ public class StartScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(400, 750, 1);
+        prepare();
+    }
+    
+    public void act()
+    {
+        
+    }
+    
+    private void prepare()
+    {
+        Label label3 = new Label("Press <space> to Start", 40);
+        addObject(label3,202,348);
+        Label label2 = new Label("Use <-- and --> to Move", 40);
+        addObject(label2,205,424);
     }
 }
