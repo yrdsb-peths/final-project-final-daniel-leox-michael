@@ -16,6 +16,7 @@ public class Jet extends Actor
     SimpleTimer CD = new SimpleTimer();
     public void act()
     {
+        setImage("images/rocket.png");
         // Add your action code here.
         if(getX()-1>0){
             if(Greenfoot.isKeyDown("left"))

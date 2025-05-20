@@ -3,9 +3,9 @@ import greenfoot.*;
 public class MyWorld extends World {
     public MyWorld() {
         super(400, 750, 1, false);
+        setBackground("images/space.jpg");
         Jet jet = new Jet();
         addObject(jet, 200,650);
-        
     }
     public void shootBillet(int x){
         Bullet bullet = new Bullet();

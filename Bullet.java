@@ -14,6 +14,7 @@ public class Bullet extends Actor
      */
     public void act()
     {
+        setImage("images/apple1.png");
         setLocation(getX(),getY()-5);
         if(isTouching(EnemyJetOne.class))
         {
