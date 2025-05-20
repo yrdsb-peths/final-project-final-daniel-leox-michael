@@ -30,7 +30,7 @@ public class MyWorld extends World {
         Hp.setValue(x);
     }
     public void end(){
-        EndScreen end = new EndScreen();
+        EndScreen end = new EndScreen(totalCoin);
         Greenfoot.setWorld(end);
     }
     public void addCoin(){
