@@ -14,10 +14,12 @@ public class Bullet extends Actor
      */
     public void act()
     {
+        MyWorld world = (MyWorld) getWorld();
         setImage("images/apple1.png");
         setLocation(getX(),getY()-5);
         if(isTouching(EnemyJetOne.class))
         {
+            world.addCoin();
             removeTouching(EnemyJetOne.class);
             getWorld().removeObject(this);
         }

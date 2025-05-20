@@ -13,7 +13,7 @@ public class EndScreen extends World
      * Constructor for objects of class EndScreen.
      * 
      */
-    public EndScreen()
+    public EndScreen(int coinGetInThisRound)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(400, 750, 1);

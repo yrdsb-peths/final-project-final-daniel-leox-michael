@@ -2,10 +2,14 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     Label Hp;
+    Label Coin;
+    int totalCoin=0;
     public MyWorld() {
         super(400, 750, 1, false);
         Hp = new Label(0,80);
         addObject(Hp,350,700);
+        Coin = new Label(totalCoin,80);
+        addObject(Coin,50,700);
         setBackground("images/space.jpg");
         Jet jet = new Jet();
         addObject(jet, 200,650);
@@ -28,5 +32,9 @@ public class MyWorld extends World {
     public void end(){
         EndScreen end = new EndScreen();
         Greenfoot.setWorld(end);
+    }
+    public void addCoin(){
+        totalCoin++;
+        Coin.setValue(totalCoin);
     }
 }
