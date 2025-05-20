@@ -14,6 +14,7 @@ public class Jet extends Actor
      */
     SimpleTimer spawn = new SimpleTimer();
     SimpleTimer CD = new SimpleTimer();
+    int hp=20;
     public void act()
     {
         setImage("images/rocket.png");
@@ -33,7 +34,6 @@ public class Jet extends Actor
         }
         spawnJet();
         shoot();
-        
     }
     public void shoot(){
         if(CD.millisElapsed()<500)
@@ -57,13 +57,22 @@ public class Jet extends Actor
         spawn.mark();
     }
     public void getDamage(){
+        MyWorld world = (MyWorld) getWorld();
+        world.getHp(hp);
         if(isTouching(EnemyJetOne.class))
         {
             removeTouching(EnemyJetOne.class);
+            hp--;
+            world.getHp(hp);
         }
         if(isTouching(EnemyBullet.class))
         {
             removeTouching(EnemyBullet.class);
+            hp--;
+            world.getHp(hp);
+        }
+        if (hp<=0){
+            world.end();
         }
     }
 }
