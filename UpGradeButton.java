@@ -15,13 +15,14 @@ public class UpGradeButton extends Actor
     public void act()
     {
         // Add your action code here.
-        setImage("images/upgrade.png");
+        setImage("upGradeButton.jpg");
         GreenfootImage image = getImage();
-        image.scale(50, 50);
+        image.scale(300, 100);
         setImage(image);
-        if(Greenfoot.mouseClicked(this)){
-            EndScreen world = (EndScreen) getWorld();
-            EndScreen.goUpGradeScreen();
+        if(Greenfoot.mouseClicked(this))
+        {
+            UpGradeScreen upGradeWorld = new UpGradeScreen(0,20,5,1,5);
+            Greenfoot.setWorld(upGradeWorld);
         }
     }
 }
