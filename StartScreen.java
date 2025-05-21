@@ -24,7 +24,7 @@ public class StartScreen extends World
     {
         if(Greenfoot.isKeyDown("enter"))
         {
-            MyWorld gameWorld = new MyWorld(0,20,5,1,5);
+            MyWorld gameWorld = new MyWorld(0,50,3,1,10);
             Greenfoot.setWorld(gameWorld);
         }
     }

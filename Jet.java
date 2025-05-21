@@ -31,13 +31,13 @@ public class Jet extends Actor
         if(getX()-1>0){
             if(Greenfoot.isKeyDown("left"))
             {
-              move(-3);  
+              move(-*speed);  
             }
         }
         if(getX()+1<400){
             if(Greenfoot.isKeyDown("Right"))
             {
-              move(3);  
+              move(speed);  
             } 
             
         }
@@ -45,7 +45,7 @@ public class Jet extends Actor
         shoot();
     }
     public void shoot(){
-        if(CD.millisElapsed()<500)
+        if(CD.millisElapsed()<rateOfFire*100)
         {
             return;
         }
