@@ -17,7 +17,6 @@ public class EnemyJetOne extends Enemy
     public void act()
     {
         setImage("images/jet2.jpg");
-        removeTouching(Bullet.class);
         moveToPlayer();
         shoot();
         GreenfootImage image = getImage();
