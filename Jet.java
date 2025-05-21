@@ -31,7 +31,7 @@ public class Jet extends Actor
         if(getX()-1>0){
             if(Greenfoot.isKeyDown("left"))
             {
-              move(-*speed);  
+              move(-speed);  
             }
         }
         if(getX()+1<400){
