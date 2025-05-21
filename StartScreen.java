@@ -26,9 +26,11 @@ public class StartScreen extends World
     private void prepare()
     {
         Label label = new Label("Use <-- and --> to Move", 40);
-        addObject(label,205,424);
+        addObject(label,200,500);
         startGameButton startGameButton = new startGameButton();
         addObject(startGameButton,187,517);
         startGameButton.setLocation(197,550);
+        UpGradeButton upGradeButton = new UpGradeButton();
+        addObject(upGradeButton,198,638);
     }
 }

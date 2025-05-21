@@ -16,7 +16,7 @@ public class startGameButton extends Actor
     {
         setImage("startGameButton.jpg");
         GreenfootImage image = getImage();
-        image.scale(300, 200);
+        image.scale(300, 50);
         setImage(image);
         if(Greenfoot.mouseClicked(this))
         {
