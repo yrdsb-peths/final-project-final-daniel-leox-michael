@@ -4,15 +4,23 @@ public class MyWorld extends World {
     Label Hp;
     Label Coin;
     int totalCoin=0;
-    public MyWorld() {
+    int hp;
+    int rateOfFire;
+    int damge;
+    int speed;
+    public MyWorld(int coin, int hp,int rateOfFire,int damge,int speed) {
         super(400, 750, 1, false);
         Hp = new Label(0,80);
         addObject(Hp,350,700);
         Coin = new Label(totalCoin,80);
         addObject(Coin,50,700);
         setBackground("images/space.jpg");
-        Jet jet = new Jet();
+        Jet jet = new Jet(hp,rateOfFire,damge,speed);
         addObject(jet, 200,650);
+        this.hp=hp;
+        this.rateOfFire=rateOfFire;
+        this.damge=damge;
+        this.speed=speed;
     }
     public void shootBillet(int x){
         Bullet bullet = new Bullet();
@@ -30,7 +38,7 @@ public class MyWorld extends World {
         Hp.setValue(x);
     }
     public void end(){
-        EndScreen end = new EndScreen(totalCoin);
+        EndScreen end = new EndScreen(totalCoin,hp,rateOfFire,damge,speed);
         Greenfoot.setWorld(end);
     }
     public void addCoin(){

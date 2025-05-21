@@ -14,7 +14,16 @@ public class Jet extends Actor
      */
     SimpleTimer spawn = new SimpleTimer();
     SimpleTimer CD = new SimpleTimer();
-    int hp=20;
+    int hp;
+    int rateOfFire;
+    int damge;
+    int speed;
+    public Jet(int hp, int rateOfFire,int damge, int speed) {
+        this.hp=hp;
+        this.rateOfFire=rateOfFire;
+        this.damge=damge;
+        this.speed=speed;
+    }
     public void act()
     {
         setImage("images/rocket.png");
