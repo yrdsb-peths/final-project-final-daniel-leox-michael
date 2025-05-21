@@ -16,10 +16,13 @@ public class EnemyJetOne extends Enemy
     SimpleTimer CD = new SimpleTimer();
     public void act()
     {
-        setImage("images/airplane.png");
+        setImage("images/jet2.jpg");
         removeTouching(Bullet.class);
         moveToPlayer();
         shoot();
+        GreenfootImage image = getImage();
+        image.scale(50, 50);
+        setImage(image);
     }
     
     public void moveToPlayer()

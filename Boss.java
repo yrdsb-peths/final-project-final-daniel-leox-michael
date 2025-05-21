@@ -14,6 +14,9 @@ public class Boss extends Enemy
      */
     public void act()
     {
-        // Add your action code here.
+        setImage("images/jet3.jpg");
+        GreenfootImage image = getImage();
+        image.scale(100, 100);
+        setImage(image);
     }
 }
