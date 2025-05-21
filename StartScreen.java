@@ -21,8 +21,6 @@ public class StartScreen extends World
     }
     
     
-    
-    
     private void prepare()
     {
         Label label = new Label("Use <-- and --> to Move", 40);
