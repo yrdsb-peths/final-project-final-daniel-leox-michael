@@ -14,6 +14,9 @@ public class NPCJet extends Actor
      */
     public void act()
     {
-        
+        setImage("images/final2.png");
+        GreenfootImage image = getImage();
+        image.scale(25,25);
+        setImage(image);
     }
 }

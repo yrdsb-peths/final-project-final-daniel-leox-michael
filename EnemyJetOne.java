@@ -16,7 +16,7 @@ public class EnemyJetOne extends Enemy
     SimpleTimer CD = new SimpleTimer();
     public void act()
     {
-        setImage("images/jet2.jpg");
+        setImage("images/final4.png");
         removeTouching(Bullet.class);
         moveToPlayer();
         shoot();
