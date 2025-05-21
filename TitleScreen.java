@@ -24,7 +24,7 @@ public class TitleScreen extends World
     
     public void act()
     {
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.mouseClicked(this))
         {
             StartScreen startGameWorld = new StartScreen();
             Greenfoot.setWorld(startGameWorld);
@@ -33,7 +33,12 @@ public class TitleScreen extends World
     
     private void prepare()
     {
-        Label label = new Label("Press <space> to Start", 40);
+        Label label = new Label("Mouse < Click > to Start", 40);
         addObject(label,202,346);
+        label.setLocation(200,334);
+        label.setLocation(199,352);
+        label.setLocation(186,338);
+        label.setLocation(186,337);
+        label.setLocation(210,344);
     }
 }

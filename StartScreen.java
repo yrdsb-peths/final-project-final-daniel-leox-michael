@@ -20,20 +20,15 @@ public class StartScreen extends World
         prepare();
     }
     
-    public void act()
-    {
-        if(Greenfoot.isKeyDown("enter"))
-        {
-            MyWorld gameWorld = new MyWorld(0,20,5,1,5);
-            Greenfoot.setWorld(gameWorld);
-        }
-    }
+    
+    
     
     private void prepare()
     {
-        Label label3 = new Label("Press <enter> to Start", 40);
-        addObject(label3,202,348);
-        Label label2 = new Label("Use <-- and --> to Move", 40);
-        addObject(label2,205,424);
+        Label label = new Label("Use <-- and --> to Move", 40);
+        addObject(label,205,424);
+        startGameButton startGameButton = new startGameButton();
+        addObject(startGameButton,187,517);
+        startGameButton.setLocation(197,550);
     }
 }
