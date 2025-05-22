@@ -28,7 +28,5 @@ public class StartScreen extends World
         startGameButton startGameButton = new startGameButton();
         addObject(startGameButton,187,517);
         startGameButton.setLocation(197,550);
-        UpGradeButton upGradeButton = new UpGradeButton();
-        addObject(upGradeButton,198,638);
     }
 }
