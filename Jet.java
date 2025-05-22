@@ -18,6 +18,7 @@ public class Jet extends Actor
     int rateOfFire;
     int damge;
     int speed;
+    GreenfootImage[] jet = new GreenfootImage[4];
     public Jet(int hp, int rateOfFire,int damge, int speed) {
         this.hp=hp;
         this.rateOfFire=rateOfFire;
@@ -26,20 +27,21 @@ public class Jet extends Actor
     }
     public void act()
     {
-        setImage("images/rocket.png");
+        setImage("images/jet0.png");
         // Add your action code here.
         if(getX()-1>0){
             if(Greenfoot.isKeyDown("left"))
             {
               move(-speed);  
             }
+            setImage("images/jet0.png");
         }
         if(getX()+1<400){
             if(Greenfoot.isKeyDown("Right"))
             {
               move(speed);  
             } 
-            
+            setImage("images/jet0.png");
         }
         spawnJet();
         shoot();
