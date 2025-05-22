@@ -520,3 +520,37 @@ Opening project: F:\final-project-final-daniel-leox-michael
 1747918185904: Listening for JDWP connection on address: javadebug
 Connected to debug VM via dt_shmem transport...
 Communication with debug VM fully established.
+Error or exception for source not in project: F:\final-project-final-daniel-leox-michael\World.java, line 423: java.lang.NullPointerException:
+null
+====
+
+====
+Greenfoot run started: Thu May 22 09:18:53 EDT 2025
+Greenfoot version: 3.9.0
+Build ID: 6c1390e0
+Java version 21.0.4
+JavaFX version 21.0.3+2
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.4+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: F:\Greenfoot-windows-390\greenfoot\jdk
+----
+Opening project: F:\final-project-final-daniel-leox-michael
+====
+
+====
+Greenfoot run started: Thu May 22 09:18:53 EDT 2025
+Greenfoot version: 3.9.0
+Build ID: 6c1390e0
+Java version 21.0.4
+JavaFX version 21.0.3+2
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.4+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: F:\Greenfoot-windows-390\greenfoot\jdk
+----
+Opening project: F:\final-project-final-daniel-leox-michael
+1747919935033: Listening for JDWP connection on address: javadebug
+1747919935511: Listening for JDWP connection on address: 127.0.0.1:52106
+Connected to debug VM via dt_shmem transport...
+Connected to debug VM via dt_socket transport...
+Communication with debug VM fully established.
+Communication with debug VM fully established.

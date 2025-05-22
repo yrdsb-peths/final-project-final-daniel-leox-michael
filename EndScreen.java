@@ -24,6 +24,8 @@ public class EndScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(400, 750, 1);
         Coin = new Label(coinGetInThisRound,80);
+        Label label = new Label("Game Over", 40);
+        addObject(label,202,346);
         addObject(Coin,50,700);
         UpGradeButton upGradeButton = new UpGradeButton();
         addObject(upGradeButton, 350, 650);
