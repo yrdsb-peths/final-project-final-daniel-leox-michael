@@ -27,21 +27,23 @@ public class Jet extends Actor
     }
     public void act()
     {
-        setImage("images/jet0.png");
+        setImage("images/jet2.png");
         // Add your action code here.
         if(getX()-1>0){
             if(Greenfoot.isKeyDown("left"))
             {
               move(-speed);  
+              setImage("images/jet1.png");
             }
-            setImage("images/jet0.png");
+            
         }
         if(getX()+1<400){
             if(Greenfoot.isKeyDown("Right"))
             {
               move(speed);  
+              setImage("images/jet3.png");
             } 
-            setImage("images/jet0.png");
+            
         }
         spawnJet();
         shoot();
