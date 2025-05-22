@@ -14,6 +14,6 @@ public class Enemy extends Actor
      */
     public void act()
     {
-        setImage("images/final2.png");
+        
     }
 }

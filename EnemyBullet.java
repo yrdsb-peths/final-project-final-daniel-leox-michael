@@ -15,7 +15,7 @@ public class EnemyBullet extends Actor
     boolean newSpawn = true;
     public void act()
     {
-        setImage("images/apple2.png");
+        setImage("images/final7.png");
         if (newSpawn){
             checkPosition();
             newSpawn=false;
