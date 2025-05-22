@@ -21,8 +21,8 @@ public class UpGradeButton extends Actor
         setImage(image);
         if(Greenfoot.mouseClicked(this))
         {
-            UpGradeScreen upGradeWorld = new UpGradeScreen(0,20,5,1,5);
-            Greenfoot.setWorld(upGradeWorld);
+            EndScreen world = (EndScreen) getWorld();
+            world.goUpGradeScreen();
         }
     }
 }
