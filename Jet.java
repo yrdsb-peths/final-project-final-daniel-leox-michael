@@ -33,7 +33,7 @@ public class Jet extends Actor
             if(Greenfoot.isKeyDown("left"))
             {
               move(-speed);  
-              setImage("images/jet1.png");
+              setImage("images/jet3.png");
             }
             
         }
@@ -41,7 +41,7 @@ public class Jet extends Actor
             if(Greenfoot.isKeyDown("Right"))
             {
               move(speed);  
-              setImage("images/jet3.png");
+              setImage("images/jet1.png");
             } 
             
         }
