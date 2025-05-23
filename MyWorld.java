@@ -13,7 +13,7 @@ public class MyWorld extends World {
         Hp = new Label(0,80);
         addObject(Hp,350,700);
         Coin = new Label(totalCoin,80);
-        addObject(Coin,50,700);
+        addObject(Coin,100,700);
         setBackground("images/space.jpg");
         Jet jet = new Jet(hp,rateOfFire,damge,speed);
         addObject(jet, 200,650);
@@ -21,6 +21,10 @@ public class MyWorld extends World {
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;
+        HP hP = new HP();
+        addObject(hP,285,700);
+        Coin coins = new Coin();
+        addObject(coins,50,700);
     }
     public void shootBillet(int x){
         Bullet bullet = new Bullet();

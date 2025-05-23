@@ -39,6 +39,8 @@ public class UpGradeScreen extends World
             addObject(buttun[i], 80,80+100*i);
         }
         
+        startGameButton startGameButton = new startGameButton();
+        addObject(startGameButton,200,580);
     }
     public static void upGrade(PropertyUpGradeButton x){
         if (x==buttun[0]){
