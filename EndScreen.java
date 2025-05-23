@@ -26,11 +26,13 @@ public class EndScreen extends World
         Coin = new Label(coinGetInThisRound,80);
         Label label = new Label("Game Over", 80);
         addObject(label,200,380);
-        addObject(Coin,50,700);
+        addObject(Coin,100,700);
         UpGradeButton upGradeButton = new UpGradeButton();
         addObject(upGradeButton, 200, 500);
         startGameButton startGameButton = new startGameButton();
         addObject(startGameButton,200,580);
+        Coin coins = new Coin();
+        addObject(coins,50,700);
         coin = coinGetInThisRound;
         this.hp=hp;
         this.rateOfFire=rateOfFire;

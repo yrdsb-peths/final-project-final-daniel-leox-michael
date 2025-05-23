@@ -14,7 +14,7 @@ public class startGameButton extends Actor
      */
     public void act()
     {
-        setImage("startGameButton.jpg");
+        setImage("startGameButton.png");
         GreenfootImage image = getImage();
         image.scale(300, 50);
         setImage(image);

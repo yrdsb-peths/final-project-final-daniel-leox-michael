@@ -15,7 +15,7 @@ public class UpGradeButton extends Actor
     public void act()
     {
         // Add your action code here.
-        setImage("upGradeButton.jpg");
+        setImage("upGradeButton.png");
         GreenfootImage image = getImage();
         image.scale(300, 100);
         setImage(image);
