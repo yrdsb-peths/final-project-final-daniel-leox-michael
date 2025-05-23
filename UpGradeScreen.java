@@ -18,8 +18,7 @@ public class UpGradeScreen extends World
     static int rateOfFire;
     static int damge;
     static int speed;
-    static GreenBlock[] greenBlock = new GreenBlock[25];
-    static RadBlock[] radBlock = new RadBlock[25];
+    static GreenBlock[] block = new GreenBlock[5];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
     public UpGradeScreen(int coin,int hp,int rateOfFire,int damge,int speed)
     {    
@@ -31,7 +30,10 @@ public class UpGradeScreen extends World
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;
-        setUp();
+        for(int i=0; i<5;i++){
+            block[i] = new GreenBlock();
+            addObject(block[i], 20+i*50,650);
+        }
         for(int i=0; i<5;i++){
             buttun[i] = new PropertyUpGradeButton();
             addObject(buttun[i], 80,80+100*i);
@@ -39,32 +41,18 @@ public class UpGradeScreen extends World
         
         startGameButton startGameButton = new startGameButton();
         addObject(startGameButton,200,580);
-    }
-    public void act(){
-        setUp();
+        HP hP = new HP();
+        addObject(hP,30,80);
+        Label label = new Label("Fighter's HP", 30);
+        addObject(label,90,120);
     }
     public static void upGrade(PropertyUpGradeButton x){
         if (x==buttun[0]){
-            hp+=20;
+            hp+=10;
         }
         if(x==buttun[4]){
             MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed);
             Greenfoot.setWorld(upGradeScreen);
-        }
-
-    }
-    public void setUp(){
-        hp();
-    }
-    public void hp(){
-        int checkUpGrade = hp/20;
-        for(int i=1; i<checkUpGrade;i++){
-            greenBlock[i] = new GreenBlock();
-            addObject(greenBlock[i], 60+i*50,80);
-        }
-        for(int i=checkUpGrade; i<=5;i++){
-            radBlock[i] = new RadBlock();
-            addObject(radBlock[i], 60+i*50,80);
         }
     }
 }
