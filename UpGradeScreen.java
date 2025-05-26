@@ -50,7 +50,12 @@ public class UpGradeScreen extends World
         if (x==buttun[1]){
             rateOfFire--;
         }
-            
+        if (x==buttun[2]){
+            damge++;
+        }  
+        if (x==buttun[3]){
+            speed++;
+        }
     }
     public static void restart(){
         MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed);
@@ -62,33 +67,62 @@ public class UpGradeScreen extends World
     public void setUp(){
         hp();
         rate();
+        damge();
+        speed();
     }
     public void hp(){
         int checkUpGrade = hp/20;
         for(int i=0; i<5;i++){
             if(checkUpGrade >0){
                 greenBlock[i] = new GreenBlock();
-                addObject(greenBlock[i], 60+i*50,80);
+                addObject(greenBlock[i], 150+i*50,80);
                 checkUpGrade--;
             }
             else{
                 radBlock[i] = new RadBlock();
-                addObject(radBlock[i], 60+i*50,80);
+                addObject(radBlock[i], 150+i*50,80);
             }
         }
     }
-       public void rate(){
+    public void rate(){
         int checkUpGrade = rateOfFire-5;
         for(int i=0; i<5;i++){
             if(checkUpGrade <=0){
                 greenBlock[i+4] = new GreenBlock();
-                addObject(greenBlock[i+4], 80+i*50,180);
+                addObject(greenBlock[i+4], 150+i*50,180);
                 checkUpGrade++;
             }
             else{
                 radBlock[i+4] = new RadBlock();
-                addObject(radBlock[i+4], 80+i*50,180);
-                
+                addObject(radBlock[i+4], 150+i*50,180);
+            }
+        }
+    }
+    public void damge(){
+        int checkUpGrade = damge;
+        for(int i=0; i<5;i++){
+            if(checkUpGrade >=1){
+                greenBlock[i+8] = new GreenBlock();
+                addObject(greenBlock[i+8], 150+i*50,280);
+                checkUpGrade--;
+            }
+            else{
+                radBlock[i+8] = new RadBlock();
+                addObject(radBlock[i+8], 150+i*50,280);
+            }
+        }
+    }
+    public void speed(){
+        int checkUpGrade = speed;
+        for(int i=0; i<5;i++){
+            if(checkUpGrade >=5){
+                greenBlock[i+12] = new GreenBlock();
+                addObject(greenBlock[i+12], 150+i*50,380);
+                checkUpGrade--;
+            }
+            else{
+                radBlock[i+12] = new RadBlock();
+                addObject(radBlock[i+12], 150+i*50,380);
             }
         }
     }
