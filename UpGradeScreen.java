@@ -21,6 +21,7 @@ public class UpGradeScreen extends World
     static GreenBlock[] greenBlock = new GreenBlock[25];
     static RadBlock[] radBlock = new RadBlock[25];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
+    RestartGame restartGame;
     public UpGradeScreen(int coin,int hp,int rateOfFire,int damge,int speed)
     {    
         
@@ -31,7 +32,7 @@ public class UpGradeScreen extends World
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;
-        RestartGame restartGame = new RestartGame();
+        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed);
         addObject(restartGame,200,580);
         HP hP = new HP();
         setUp();
@@ -57,12 +58,9 @@ public class UpGradeScreen extends World
             speed++;
         }
     }
-    public static void restart(){
-        MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed);
-        Greenfoot.setWorld(upGradeScreen);
-    }
     public void act(){
         setUp();
+        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed);
     }
     public void setUp(){
         hp();

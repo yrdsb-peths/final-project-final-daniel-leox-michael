@@ -12,6 +12,18 @@ public class RestartGame extends Actor
      * Act - do whatever the RestartGame wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    static int coin;
+    static int hp;
+    static int rateOfFire;
+    static int damge;
+    static int speed;
+    public RestartGame(int coin, int hp,int rateOfFire,int damge,int speed){
+        this.coin = coin;
+        this.hp=hp;
+        this.rateOfFire=rateOfFire;
+        this.damge=damge;
+        this.speed=speed;
+    }
     public void act()
     {
         // Add your action code here.
@@ -21,8 +33,8 @@ public class RestartGame extends Actor
         setImage(image);
         if(Greenfoot.mouseClicked(this))
         {
-            UpGradeScreen world = (UpGradeScreen) getWorld();
-            UpGradeScreen.restart();
+            MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed);
+            Greenfoot.setWorld(upGradeScreen);
         }
     }
 }
