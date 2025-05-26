@@ -65,26 +65,30 @@ public class UpGradeScreen extends World
     }
     public void hp(){
         int checkUpGrade = hp/20;
-        for(int i=1; i<checkUpGrade;i++){
-            greenBlock[i] = new GreenBlock();
-            addObject(greenBlock[i], 60+i*50,80);
-        }
-        for(int i=checkUpGrade; i<=5;i++){
-            radBlock[i] = new RadBlock();
-            addObject(radBlock[i], 60+i*50,80);
+        for(int i=0; i<5;i++){
+            if(checkUpGrade >0){
+                greenBlock[i] = new GreenBlock();
+                addObject(greenBlock[i], 60+i*50,80);
+                checkUpGrade--;
+            }
+            else{
+                radBlock[i] = new RadBlock();
+                addObject(radBlock[i], 60+i*50,80);
+            }
         }
     }
        public void rate(){
-        int checkUpGrade = rateOfFire;
+        int checkUpGrade = rateOfFire-5;
         for(int i=0; i<5;i++){
             if(checkUpGrade <=0){
                 greenBlock[i+4] = new GreenBlock();
                 addObject(greenBlock[i+4], 80+i*50,180);
+                checkUpGrade++;
             }
             else{
                 radBlock[i+4] = new RadBlock();
                 addObject(radBlock[i+4], 80+i*50,180);
-                checkUpGrade--;
+                
             }
         }
     }
