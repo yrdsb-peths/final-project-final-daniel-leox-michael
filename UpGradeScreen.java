@@ -31,8 +31,8 @@ public class UpGradeScreen extends World
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;
-        startGameButton startGameButton = new startGameButton();
-        addObject(startGameButton,200,580);
+        RestartGame restartGame = new RestartGame();
+        addObject(restartGame,200,580);
         HP hP = new HP();
         setUp();
         addObject(hP,30,80);
@@ -50,10 +50,11 @@ public class UpGradeScreen extends World
         if (x==buttun[1]){
             rateOfFire--;
         }
-        if(x==buttun[4]){
-            MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed);
-            Greenfoot.setWorld(upGradeScreen);
-        }
+            
+    }
+    public static void restart(){
+        MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed);
+        Greenfoot.setWorld(upGradeScreen);
     }
     public void act(){
         setUp();
