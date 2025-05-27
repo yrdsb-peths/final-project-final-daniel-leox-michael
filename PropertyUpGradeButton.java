@@ -15,7 +15,7 @@ public class PropertyUpGradeButton extends Actor
     public void act()
     {
         // Add your action code here.
-        setImage("images/upgrade.png");
+        setImage("images/final3.png");
         GreenfootImage image = getImage();
         image.scale(50, 50);
         if(Greenfoot.mouseClicked(this)){
