@@ -684,3 +684,35 @@ Opening project: F:\final-project-final-daniel-leox-michael
 1748264727888: Listening for JDWP connection on address: javadebug
 Connected to debug VM via dt_shmem transport...
 Communication with debug VM fully established.
+====
+
+====
+Greenfoot run started: Tue May 27 08:35:12 EDT 2025
+Greenfoot version: 3.9.0
+Build ID: 6c1390e0
+Java version 21.0.4
+JavaFX version 21.0.3+2
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.4+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: F:\Greenfoot-windows-390\greenfoot\jdk
+----
+Opening project: F:\final-project-final-daniel-leox-michael
+1748349313892: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+Greenfoot run started: Tue May 27 09:21:58 EDT 2025
+Greenfoot version: 3.9.0
+Build ID: 6c1390e0
+Java version 21.0.4
+JavaFX version 21.0.3+2
+Virtual machine: OpenJDK 64-Bit Server VM 21.0.4+7-LTS (Eclipse Adoptium)
+Running on: Windows 11 10.0 (amd64)
+Java Home: F:\Greenfoot-windows-390\greenfoot\jdk
+----
+Opening project: F:\final-project-final-daniel-leox-michael
+1748352118844: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.

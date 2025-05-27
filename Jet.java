@@ -71,21 +71,26 @@ public class Jet extends Actor
     }
     public void getDamage(){
         MyWorld world = (MyWorld) getWorld();
-        world.getHp(hp);
+        world.setHp(hp);
         if(isTouching(EnemyJetOne.class))
         {
             removeTouching(EnemyJetOne.class);
             hp--;
-            world.getHp(hp);
+            world.setHp(hp);
         }
         if(isTouching(EnemyBullet.class))
         {
             removeTouching(EnemyBullet.class);
             hp--;
-            world.getHp(hp);
+            world.setHp(hp);
         }
         if (hp<=0){
             world.end();
         }
+    }
+    public void updataHp()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        
     }
 }

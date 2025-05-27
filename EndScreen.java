@@ -31,13 +31,13 @@ public class EndScreen extends World
         Coin = new Label(coinGetInThisRound,65);
         Label label = new Label("Game Over", 80);
         addObject(label,200,350);
-        addObject(Coin,120,700);
+        addObject(Coin,120,20);
         UpGradeButton upGradeButton = new UpGradeButton();
         addObject(upGradeButton, 200, 500);
         RestartGame startGameButton = new RestartGame(coin,hp,rateOfFire,damge,speed);
         addObject(startGameButton,200,580);
         Coin coins = new Coin();
-        addObject(coins,50,700);
+        addObject(coins,50,20);
     }
     public static void goUpGradeScreen(){
         UpGradeScreen upGradeScreen = new UpGradeScreen(coin,hp,rateOfFire,damge,speed);

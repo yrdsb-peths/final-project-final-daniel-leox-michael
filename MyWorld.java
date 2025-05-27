@@ -1,19 +1,17 @@
 import greenfoot.*;
 
 public class MyWorld extends World {
-    Label Hp;
     Label Coin;
     int totalCoin=0;
     int hp;
     int rateOfFire;
     int damge;
     int speed;
+    int currentHp;
     public MyWorld(int coin, int hp,int rateOfFire,int damge,int speed) {
         super(400, 750, 1, false);
-        Hp = new Label(0,80);
-        addObject(Hp,350,700);
         Coin = new Label(totalCoin,80);
-        addObject(Coin,115,700);
+        addObject(Coin,105,20);
         setBackground("images/space.jpg");
         Jet jet = new Jet(hp,rateOfFire,damge,speed);
         addObject(jet, 200,650);
@@ -21,14 +19,17 @@ public class MyWorld extends World {
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;
-        HP hP = new HP();
-        addObject(hP,285,700);
+        this.currentHp=hp;
         Coin coins = new Coin();
-        addObject(coins,50,700);
+        addObject(coins,50,20);
+        Red rad = new Red();
+        addObject(rad,200,700);
+        Green green = new Green();
+        addObject(green,200,700);
     }
     public void shootBillet(int x){
         Bullet bullet = new Bullet();
-        addObject(bullet,x,650);
+        addObject(bullet,x,600);
     }
     public void shootEnemyBillet(int x, int y){
         EnemyBullet bullet = new EnemyBullet();
@@ -38,8 +39,8 @@ public class MyWorld extends World {
         EnemyJetOne Enemy1 = new EnemyJetOne();
         addObject(Enemy1,x,0);
     }
-    public void getHp(int x){
-        Hp.setValue(x);
+    public void setHp(int x){
+        currentHp=x;
     }
     public void end(){
         EndScreen end = new EndScreen(totalCoin,hp,rateOfFire,damge,speed);
@@ -48,5 +49,14 @@ public class MyWorld extends World {
     public void addCoin(){
         totalCoin++;
         Coin.setValue(totalCoin);
+    }
+    public void setCurrentHp(int hp){
+        currentHp=hp;
+    }
+    public int getCureentHp(){
+        return currentHp;
+    }
+    public int getHp(){
+        return hp;
     }
 }

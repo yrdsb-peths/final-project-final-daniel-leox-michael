@@ -19,7 +19,7 @@ public class UpGradeScreen extends World
     static int damge;
     static int speed;
     static GreenBlock[] greenBlock = new GreenBlock[25];
-    static RadBlock[] radBlock = new RadBlock[25];
+    static RedBlock[] radBlock = new RedBlock[25];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
     RestartGame restartGame;
     public UpGradeScreen(int coin,int hp,int rateOfFire,int damge,int speed)
