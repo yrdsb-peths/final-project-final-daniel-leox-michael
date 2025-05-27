@@ -58,16 +58,25 @@ public class UpGradeScreen extends World
     }
     public static void upGrade(PropertyUpGradeButton x){
         if (x==buttun[0]){
-            hp+=20;
+            if (hp < 100)
+            {
+                hp+=20;
+            }
         }
         if (x==buttun[1]){
+            if (rateOfFire > 1)
+            {
             rateOfFire--;
+            }
         }
         if (x==buttun[2]){
             damge++;
         }  
         if (x==buttun[3]){
-            speed++;
+            if (speed < 10)
+            {
+                speed++;
+            }
         }
     }
     public void act(){
