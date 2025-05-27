@@ -37,8 +37,20 @@ public class UpGradeScreen extends World
         HP hP = new HP();
         setUp();
         addObject(hP,30,80);
-        Label label = new Label("Fighter's HP", 30);
-        addObject(label,90,120);
+        fireRate FR = new fireRate();
+        addObject(FR,25,180);
+        damage dmg = new damage();
+        addObject(dmg,30,280);
+        speed spd = new speed();
+        addObject(spd,30,380);
+        Label label = new Label("HP", 30);
+        addObject(label,85,120);
+        Label label1 = new Label("Fire Rate", 30);
+        addObject(label1,85,220);
+        Label label2 = new Label("Damage", 30);
+        addObject(label2,85,320);
+        Label label3 = new Label("Speed", 30);
+        addObject(label3,85,420);
         for(int i=0; i<5;i++){
             buttun[i] = new PropertyUpGradeButton();
             addObject(buttun[i], 80,80+100*i);
