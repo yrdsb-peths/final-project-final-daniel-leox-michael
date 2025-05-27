@@ -19,7 +19,7 @@ public class UpGradeScreen extends World
     static int damge;
     static int speed;
     static GreenBlock[] greenBlock = new GreenBlock[25];
-    static RedBlock[] RedBlock = new RedBlock[25];
+    static RedBlock[] redBlock = new RedBlock[25];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
     RestartGame restartGame;
     public UpGradeScreen(int coin,int hp,int rateOfFire,int damge,int speed)
@@ -98,8 +98,8 @@ public class UpGradeScreen extends World
                 checkUpGrade--;
             }
             else{
-                RedBlock[i] = new RedBlock();
-                addObject(RedBlock[i], 150+i*50,80);
+                redBlock[i] = new RedBlock();
+                addObject(redBlock[i], 150+i*50,80);
             }
         }
     }
@@ -112,8 +112,8 @@ public class UpGradeScreen extends World
                 checkUpGrade++;
             }
             else{
-                RedBlock[i+4] = new RedBlock();
-                addObject(RedBlock[i+4], 150+i*50,180);
+                redBlock[i+4] = new RedBlock();
+                addObject(redBlock[i+4], 150+i*50,180);
             }
         }
     }
@@ -126,8 +126,8 @@ public class UpGradeScreen extends World
                 checkUpGrade--;
             }
             else{
-                RedBlock[i+8] = new RedBlock();
-                addObject(RedBlock[i+8], 150+i*50,280);
+                redBlock[i+8] = new RedBlock();
+                addObject(redBlock[i+8], 150+i*50,280);
             }
         }
     }
@@ -140,8 +140,8 @@ public class UpGradeScreen extends World
                 checkUpGrade--;
             }
             else{
-                RedBlock[i+12] = new RedBlock();
-                addObject(RedBlock[i+12], 150+i*50,380);
+                redBlock[i+12] = new RedBlock();
+                addObject(redBlock[i+12], 150+i*50,380);
             }
         }
     }

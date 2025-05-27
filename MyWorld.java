@@ -22,8 +22,8 @@ public class MyWorld extends World {
         this.currentHp=hp;
         Coin coins = new Coin();
         addObject(coins,50,20);
-        Red rad = new Red();
-        addObject(rad,200,700);
+        Red red = new Red();
+        addObject(red,200,700);
         Green green = new Green();
         addObject(green,200,700);
     }
