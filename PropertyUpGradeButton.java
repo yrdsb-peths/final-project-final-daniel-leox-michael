@@ -17,7 +17,7 @@ public class PropertyUpGradeButton extends Actor
         // Add your action code here.
         setImage("images/final3.png");
         GreenfootImage image = getImage();
-        image.scale(100, 50);
+        image.scale(75, 50);
         if(Greenfoot.mouseClicked(this)){
             UpGradeScreen world = (UpGradeScreen) getWorld();
             UpGradeScreen.upGrade(this);
