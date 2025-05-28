@@ -32,6 +32,7 @@ public class UpGradeScreen extends World
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;
+        // setBackground("UpGradeScreenBackground.png");
         restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed);
         addObject(restartGame,200,580);
         HP hP = new HP();

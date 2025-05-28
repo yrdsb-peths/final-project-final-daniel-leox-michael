@@ -24,7 +24,7 @@ public class TitleScreen extends World
     
     public void act()
     {
-        setBackground("images/space4.jpg");
+        setBackground("titleScreenBackground.png");
         if(Greenfoot.mouseClicked(this))
         {
             StartScreen startGameWorld = new StartScreen();
