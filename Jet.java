@@ -47,6 +47,7 @@ public class Jet extends Actor
         }
         spawnJet();
         shoot();
+        getDamage();
     }
     public void shoot(){
         if(CD.millisElapsed()<rateOfFire*100)
@@ -58,7 +59,7 @@ public class Jet extends Actor
             world.shootBillet(getX());
             CD.mark();
         }
-        getDamage();
+        
     }
     public void spawnJet(){
         if(spawn.millisElapsed()<1000)

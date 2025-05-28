@@ -2,13 +2,15 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     Label Coin;
-    Label HP;
+    Label Hp;
     int totalCoin=0;
     int hp;
     int rateOfFire;
     int damge;
     int speed;
     int currentHp;
+    int jet;
+    Jet2[] jet2 = new Jet2[5];
     public MyWorld(int coin, int hp,int rateOfFire,int damge,int speed) {
         super(400, 750, 1, false);
         Coin = new Label(totalCoin,80);
@@ -23,14 +25,24 @@ public class MyWorld extends World {
         this.currentHp=hp;
         Coin coins = new Coin();
         addObject(coins,35,30);
-        HP Hp = new HP();
-        addObject(Hp, 35, 725);
-        HP = new Label(hp, 80);
-        addObject(HP, 350, 715);
         Red red = new Red();
         addObject(red,200,725);
         Green green = new Green();
         addObject(green,200,725);
+        Hp = new Label(hp,20);
+        Label maxHp = new Label(hp,20);
+        Label d = new Label("/",20);
+        addObject(maxHp,250,725);
+        addObject(d,200,725);
+        addObject(Hp,150,725);
+        for(int i=1; i<=4; i++){
+            int x=1;
+            if (i%2==0){
+                x=-1;
+            }
+            jet2[i] = new Jet2(rateOfFire,damge,speed);
+            addObject(jet2[i], 220+50*i*x, 650);
+        }
     }
     public void shootBillet(int x){
         Bullet bullet = new Bullet();
@@ -46,6 +58,7 @@ public class MyWorld extends World {
     }
     public void setHp(int x){
         currentHp=x;
+        Hp.setValue(x);
     }
     public void end(){
         EndScreen end = new EndScreen(totalCoin,hp,rateOfFire,damge,speed);
