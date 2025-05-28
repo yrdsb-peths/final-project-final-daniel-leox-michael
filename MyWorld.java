@@ -2,6 +2,7 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     Label Coin;
+    Label HP;
     int totalCoin=0;
     int hp;
     int rateOfFire;
@@ -11,7 +12,7 @@ public class MyWorld extends World {
     public MyWorld(int coin, int hp,int rateOfFire,int damge,int speed) {
         super(400, 750, 1, false);
         Coin = new Label(totalCoin,80);
-        addObject(Coin,105,20);
+        addObject(Coin,105,30);
         setBackground("images/space.jpg");
         Jet jet = new Jet(hp,rateOfFire,damge,speed);
         addObject(jet, 200,650);
@@ -21,11 +22,15 @@ public class MyWorld extends World {
         this.speed=speed;
         this.currentHp=hp;
         Coin coins = new Coin();
-        addObject(coins,50,20);
+        addObject(coins,35,30);
+        HP Hp = new HP();
+        addObject(Hp, 35, 725);
+        HP = new Label(hp, 80);
+        addObject(HP, 350, 715);
         Red red = new Red();
-        addObject(red,200,700);
+        addObject(red,200,725);
         Green green = new Green();
-        addObject(green,200,700);
+        addObject(green,200,725);
     }
     public void shootBillet(int x){
         Bullet bullet = new Bullet();
