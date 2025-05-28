@@ -9,9 +9,9 @@ public class MyWorld extends World {
     int damge;
     int speed;
     int currentHp;
-    int jet;
+    int numOfJet2;
     Jet2[] jet2 = new Jet2[5];
-    public MyWorld(int coin, int hp,int rateOfFire,int damge,int speed) {
+    public MyWorld(int coin, int hp,int rateOfFire,int damge,int speed, int numOfJet2) {
         super(400, 750, 1, false);
         Coin = new Label(totalCoin,80);
         addObject(Coin,105,30);
@@ -23,6 +23,7 @@ public class MyWorld extends World {
         this.damge=damge;
         this.speed=speed;
         this.currentHp=hp;
+        this.numOfJet2=numOfJet2;
         Coin coins = new Coin();
         addObject(coins,35,30);
         Red red = new Red();
@@ -35,7 +36,7 @@ public class MyWorld extends World {
         addObject(maxHp,250,725);
         addObject(d,200,725);
         addObject(Hp,150,725);
-        for(int i=1; i<=4; i++){
+        for(int i=1; i<numOfJet2; i++){
             int x=1;
             if (i%2==0){
                 x=-1;
@@ -61,7 +62,7 @@ public class MyWorld extends World {
         Hp.setValue(x);
     }
     public void end(){
-        EndScreen end = new EndScreen(totalCoin,hp,rateOfFire,damge,speed);
+        EndScreen end = new EndScreen(totalCoin,hp,rateOfFire,damge,speed,numOfJet2);
         Greenfoot.setWorld(end);
     }
     public void addCoin(){

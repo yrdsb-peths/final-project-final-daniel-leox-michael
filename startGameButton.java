@@ -20,7 +20,7 @@ public class startGameButton extends Actor
         setImage(image);
         if(Greenfoot.mouseClicked(this))
         {
-            MyWorld gameWorld = new MyWorld(0,20,5,1,5);
+            MyWorld gameWorld = new MyWorld(0,20,5,1,5,0);
             Greenfoot.setWorld(gameWorld);
         }
     }

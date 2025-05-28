@@ -17,12 +17,14 @@ public class RestartGame extends Actor
     static int rateOfFire;
     static int damge;
     static int speed;
-    public RestartGame(int coin, int hp,int rateOfFire,int damge,int speed){
+    static int numOfJet2;
+    public RestartGame(int coin, int hp,int rateOfFire,int damge,int speed,int numOfJet2){
         this.coin = coin;
         this.hp=hp;
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;
+        this.numOfJet2=numOfJet2;
     }
     public void act()
     {
@@ -33,7 +35,7 @@ public class RestartGame extends Actor
         setImage(image);
         if(Greenfoot.mouseClicked(this))
         {
-            MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed);
+            MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed,numOfJet2);
             Greenfoot.setWorld(upGradeScreen);
         }
     }

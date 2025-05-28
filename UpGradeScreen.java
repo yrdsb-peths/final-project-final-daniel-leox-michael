@@ -18,11 +18,12 @@ public class UpGradeScreen extends World
     static int rateOfFire;
     static int damge;
     static int speed;
+    static int numOfJet2;
     static GreenBlock[] greenBlock = new GreenBlock[25];
     static RedBlock[] redBlock = new RedBlock[25];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
     RestartGame restartGame;
-    public UpGradeScreen(int coin,int hp,int rateOfFire,int damge,int speed)
+    public UpGradeScreen(int coin,int hp,int rateOfFire,int damge,int speed,int numOfJet2)
     {    
         
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -32,7 +33,8 @@ public class UpGradeScreen extends World
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;
-        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed);
+        this.numOfJet2= numOfJet2;
+        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed,numOfJet2);
         addObject(restartGame,200,580);
         HP hP = new HP();
         setUp();
@@ -78,16 +80,23 @@ public class UpGradeScreen extends World
                 speed++;
             }
         }
+        if (x==buttun[4]){
+            if (numOfJet2 < 5)
+            {
+                numOfJet2++;
+            }
+        }
     }
     public void act(){
         setUp();
-        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed);
+        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed,numOfJet2);
     }
     public void setUp(){
         hp();
         rate();
         damge();
         speed();
+        jet2();
     }
     public void hp(){
         int checkUpGrade = hp/20;
@@ -142,6 +151,20 @@ public class UpGradeScreen extends World
             else{
                 redBlock[i+12] = new RedBlock();
                 addObject(redBlock[i+12], 150+i*50,380);
+            }
+        }
+    }
+    public void jet2(){
+        int checkUpGrade = numOfJet2;
+        for(int i=0; i<5;i++){
+            if(checkUpGrade >=0){
+                greenBlock[i+16] = new GreenBlock();
+                addObject(greenBlock[i+16], 150+i*50,480);
+                checkUpGrade--;
+            }
+            else{
+                redBlock[i+16] = new RedBlock();
+                addObject(redBlock[i+16], 150+i*50,480);
             }
         }
     }
