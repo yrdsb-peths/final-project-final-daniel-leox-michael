@@ -54,7 +54,7 @@ public class MyWorld extends World {
         addObject(bullet,x,y);
     }
     public void spawnEnemy(int x){
-        EnemyJetOne Enemy1 = new EnemyJetOne();
+        EnemyJetOne Enemy1 = new EnemyJetOne(damge);
         addObject(Enemy1,x,0);
     }
     public void setHp(int x){
