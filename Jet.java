@@ -16,13 +16,13 @@ public class Jet extends Actor
     SimpleTimer CD = new SimpleTimer();
     int hp;
     int rateOfFire;
-    int damge;
+    int damage;
     int speed;
     GreenfootImage[] jet = new GreenfootImage[4];
-    public Jet(int hp, int rateOfFire,int damge, int speed) {
+    public Jet(int hp, int rateOfFire,int damage, int speed) {
         this.hp=hp;
         this.rateOfFire=rateOfFire;
-        this.damge=damge;
+        this.damage=damage;
         this.speed=speed;
     }
     public void act()

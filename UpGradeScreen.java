@@ -16,14 +16,14 @@ public class UpGradeScreen extends World
     static int coin;
     static int hp;
     static int rateOfFire;
-    static int damge;
+    static int damage;
     static int speed;
     static int numOfJet2;
     static GreenBlock[] greenBlock = new GreenBlock[25];
     static RedBlock[] redBlock = new RedBlock[25];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
     RestartGame restartGame;
-    public UpGradeScreen(int coin,int hp,int rateOfFire,int damge,int speed,int numOfJet2)
+    public UpGradeScreen(int coin,int hp,int rateOfFire,int damage,int speed,int numOfJet2)
     {    
         
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -31,10 +31,10 @@ public class UpGradeScreen extends World
         this.hp=hp;
         this.coin=coin;
         this.rateOfFire=rateOfFire;
-        this.damge=damge;
+        this.damage=damage;
         this.speed=speed;
         this.numOfJet2= numOfJet2;
-        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed,numOfJet2);
+        restartGame = new RestartGame(coin,hp,rateOfFire,damage,speed,numOfJet2);
         addObject(restartGame,200,580);
         HP hP = new HP();
         setUp();
@@ -72,7 +72,7 @@ public class UpGradeScreen extends World
             }
         }
         if (x==buttun[2]){
-            damge++;
+            damage++;
         }  
         if (x==buttun[3]){
             if (speed < 10)
@@ -89,12 +89,12 @@ public class UpGradeScreen extends World
     }
     public void act(){
         setUp();
-        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed,numOfJet2);
+        restartGame = new RestartGame(coin,hp,rateOfFire,damage,speed,numOfJet2);
     }
     public void setUp(){
         hp();
         rate();
-        damge();
+        damage();
         speed();
         jet2();
     }
@@ -126,8 +126,8 @@ public class UpGradeScreen extends World
             }
         }
     }
-    public void damge(){
-        int checkUpGrade = damge;
+    public void damage(){
+        int checkUpGrade = damage;
         for(int i=0; i<5;i++){
             if(checkUpGrade >=1){
                 greenBlock[i+8] = new GreenBlock();
