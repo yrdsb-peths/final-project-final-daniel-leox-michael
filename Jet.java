@@ -18,6 +18,7 @@ public class Jet extends Actor
     int rateOfFire;
     int damage;
     int speed;
+    int round;
     GreenfootImage[] jet = new GreenfootImage[4];
     public Jet(int hp, int rateOfFire,int damage, int speed) {
         this.hp=hp;
@@ -62,7 +63,7 @@ public class Jet extends Actor
         
     }
     public void spawnJet(){
-        if(spawn.millisElapsed()<1000)
+        if(spawn.millisElapsed()<1000-round*2)
         {
             return;
         }
@@ -73,6 +74,7 @@ public class Jet extends Actor
     public void getDamage(){
         MyWorld world = (MyWorld) getWorld();
         world.setHp(hp);
+        round = world.returnRound();
         if(isTouching(EnemyJetOne.class))
         {
             removeTouching(EnemyJetOne.class);
@@ -92,6 +94,5 @@ public class Jet extends Actor
     public void updataHp()
     {
         MyWorld world = (MyWorld) getWorld();
-        
     }
 }

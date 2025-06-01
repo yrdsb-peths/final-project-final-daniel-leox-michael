@@ -12,8 +12,9 @@ public class EnemyJetOne extends Enemy
      * Act - do whatever the EnemyJetOne wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int hp=5;
+    int hp;
     int damage;
+    
     SimpleTimer CD = new SimpleTimer();
     public void act()
     {
@@ -24,9 +25,11 @@ public class EnemyJetOne extends Enemy
         image.scale(50, 50);
         setImage(image);
         damage();
+        
     }
-    public EnemyJetOne(int damage){
+    public EnemyJetOne(int damage, int round){
         this.damage=damage;
+        hp=1+round/5;
     }
     public void moveToPlayer()
     {
@@ -54,6 +57,7 @@ public class EnemyJetOne extends Enemy
             if (hp<=0){
                 getWorld().removeObject(this);
                 world.addCoin();
+                world.addRound();
             }
         }
     }

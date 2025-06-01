@@ -10,6 +10,7 @@ public class MyWorld extends World {
     int speed;
     int currentHp;
     int numOfJet2;
+    int round=0;
     Jet2[] jet2 = new Jet2[5];
     public MyWorld(int coin, int hp,int rateOfFire,int damage,int speed, int numOfJet2) {
         super(400, 750, 1, false);
@@ -37,7 +38,7 @@ public class MyWorld extends World {
         addObject(maxHp,250,725);
         addObject(d,200,725);
         addObject(Hp,150,725);
-        for(int i=1; i<numOfJet2; i++){
+        for(int i=1; i<=numOfJet2; i++){
             int x=1;
             if (i%2==0){
                 x=-1;
@@ -55,7 +56,7 @@ public class MyWorld extends World {
         addObject(bullet,x,y);
     }
     public void spawnEnemy(int x){
-        EnemyJetOne Enemy1 = new EnemyJetOne(damage);
+        EnemyJetOne Enemy1 = new EnemyJetOne(damage,round);
         addObject(Enemy1,x,0);
     }
     public void setHp(int x){
@@ -78,5 +79,11 @@ public class MyWorld extends World {
     }
     public int getHp(){
         return hp;
+    }
+    public void addRound(){
+        round++;    
+    }
+    public int returnRound(){
+        return round;    
     }
 }
