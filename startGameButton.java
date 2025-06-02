@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class startGameButton extends Actor
 {
+    GreenfootSound backgroundSound = new GreenfootSound("5528.mp3");
     /**
      * Act - do whatever the startGameButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,8 +19,10 @@ public class startGameButton extends Actor
         GreenfootImage image = getImage();
         image.scale(300, 50);
         setImage(image);
+        backgroundSound.play();
         if(Greenfoot.mouseClicked(this))
         {
+            backgroundSound.stop();
             MyWorld gameWorld = new MyWorld(0,20,5,1,5);
             Greenfoot.setWorld(gameWorld);
         }

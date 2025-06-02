@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class RestartGame extends Actor
 {
+    GreenfootSound backgroundSound = new GreenfootSound("5528.mp3");
     /**
      * Act - do whatever the RestartGame wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -31,10 +32,12 @@ public class RestartGame extends Actor
         GreenfootImage image = getImage();
         image.scale(300, 50);
         setImage(image);
+        backgroundSound.play();
         if(Greenfoot.mouseClicked(this))
         {
             MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed);
             Greenfoot.setWorld(upGradeScreen);
+            backgroundSound.stop();
         }
     }
 }
