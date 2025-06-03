@@ -14,6 +14,8 @@ public class EnemyJetOne extends Enemy
      */
  
     SimpleTimer CD = new SimpleTimer();
+    int hp;
+    int damage;
     public void act()
     {
         setImage("images/final4.png");
@@ -22,10 +24,13 @@ public class EnemyJetOne extends Enemy
         GreenfootImage image = getImage();
         image.scale(50, 50);
         setImage(image);
+        damage();
     }
-    
-    public void moveToPlayer()
-    {
+    public EnemyJetOne(int damage, int round){
+        this.damage=damage;
+        hp=1+round/5;
+    }
+    public void moveToPlayer(){
         move(1);
         Jet jet = (Jet) getWorld().getObjects(Jet.class).get(0);
         turnTowards(jet.getX(), jet.getY());
@@ -40,5 +45,18 @@ public class EnemyJetOne extends Enemy
         world.shootEnemyBillet(getX(),getY());
         CD.mark();
         
+    }
+    public void damage(){
+        MyWorld world = (MyWorld) getWorld();
+        if(isTouching(Bullet.class))
+        {
+            removeTouching(Bullet.class);
+            hp-=damage;
+            if (hp<=0){
+                getWorld().removeObject(this);
+                world.addCoin();
+                world.addRound();
+            }
+        }
     }
 }

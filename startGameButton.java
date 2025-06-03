@@ -23,7 +23,7 @@ public class startGameButton extends Actor
         if(Greenfoot.mouseClicked(this))
         {
             backgroundSound.stop();
-            MyWorld gameWorld = new MyWorld(0,20,5,1,5);
+            MyWorld gameWorld = new MyWorld(0,20,5,1,5,0);
             Greenfoot.setWorld(gameWorld);
         }
     }

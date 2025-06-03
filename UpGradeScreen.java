@@ -14,15 +14,16 @@ public class UpGradeScreen extends World
      * 
      */
     static int coin;
+    static int numOfJet2;
     static int hp;
     static int rateOfFire;
-    static int damge;
+    static int damage;
     static int speed;
     static GreenBlock[] greenBlock = new GreenBlock[25];
     static RedBlock[] redBlock = new RedBlock[25];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
     RestartGame restartGame;
-    public UpGradeScreen(int coin,int hp,int rateOfFire,int damge,int speed)
+    public UpGradeScreen(int coin,int hp,int rateOfFire,int damage,int speed,int numOfJet2)
     {    
         
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,10 +31,11 @@ public class UpGradeScreen extends World
         this.hp=hp;
         this.coin=coin;
         this.rateOfFire=rateOfFire;
-        this.damge=damge;
+        this.damage=damage;
         this.speed=speed;
-        // setBackground("UpGradeScreenBackground.png");
-        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed);
+        //setBackground("UpGradeScreenBackground.png");
+        this.numOfJet2= numOfJet2;
+        restartGame = new RestartGame(coin,hp,rateOfFire,damage,speed,numOfJet2);
         addObject(restartGame,200,580);
         HP hP = new HP();
         setUp();
@@ -71,7 +73,7 @@ public class UpGradeScreen extends World
             }
         }
         if (x==buttun[2]){
-            damge++;
+            damage++;
         }  
         if (x==buttun[3]){
             if (speed < 10)
@@ -79,15 +81,21 @@ public class UpGradeScreen extends World
                 speed++;
             }
         }
+        if (x==buttun[4]){
+            if (numOfJet2 < 5)
+            {
+                numOfJet2++;
+            }
+        }
     }
     public void act(){
         setUp();
-        restartGame = new RestartGame(coin,hp,rateOfFire,damge,speed);
+        restartGame = new RestartGame(coin,hp,rateOfFire,damage,speed,numOfJet2);
     }
     public void setUp(){
         hp();
         rate();
-        damge();
+        damage();
         speed();
     }
     public void hp(){
@@ -118,8 +126,8 @@ public class UpGradeScreen extends World
             }
         }
     }
-    public void damge(){
-        int checkUpGrade = damge;
+    public void damage(){
+        int checkUpGrade = damage;
         for(int i=0; i<5;i++){
             if(checkUpGrade >=1){
                 greenBlock[i+8] = new GreenBlock();
@@ -143,6 +151,20 @@ public class UpGradeScreen extends World
             else{
                 redBlock[i+12] = new RedBlock();
                 addObject(redBlock[i+12], 150+i*50,380);
+            }
+        }
+    }
+    public void jet2(){
+        int checkUpGrade = numOfJet2;
+        for(int i=0; i<5;i++){
+            if(checkUpGrade >=0){
+                greenBlock[i+16] = new GreenBlock();
+                addObject(greenBlock[i+16], 150+i*50,480);
+                checkUpGrade--;
+            }
+            else{
+                redBlock[i+16] = new RedBlock();
+                addObject(redBlock[i+16], 150+i*50,480);
             }
         }
     }
