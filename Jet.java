@@ -12,6 +12,7 @@ public class Jet extends Actor
      * Act - do whatever the Jet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GreenfootSound shootSoundEffect = new GreenfootSound("shootSound.mp3");
     GreenfootSound backgroundSound = new GreenfootSound("5533.mp3");
     SimpleTimer spawn = new SimpleTimer();
     SimpleTimer CD = new SimpleTimer();
@@ -58,9 +59,11 @@ public class Jet extends Actor
             return;
         }
         if (Greenfoot.isKeyDown("Space")){
+            shootSoundEffect.play();
             MyWorld world = (MyWorld) getWorld();
             world.shootBillet(getX());
             CD.mark();
+            
         }
         
     }
