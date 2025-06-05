@@ -118,6 +118,7 @@ public class UpGradeScreen extends World
         rate();
         damage();
         speed();
+        jet2();
     }
     public void hp(){
         int checkUpGrade = hp/20;
