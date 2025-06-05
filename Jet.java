@@ -14,13 +14,14 @@ public class Jet extends Actor
      */
     GreenfootSound shootSoundEffect = new GreenfootSound("shootSound.mp3");
     GreenfootSound backgroundSound = new GreenfootSound("5533.mp3");
-    SimpleTimer spawn = new SimpleTimer();
+    SimpleTimer spawnJet = new SimpleTimer();
     SimpleTimer CD = new SimpleTimer();
     int hp;
     int rateOfFire;
     int damage;
     int speed;
-    int round;    
+    int round;   
+    int boss =1;
     GreenfootImage[] jet = new GreenfootImage[4];
     public Jet(int hp, int rateOfFire,int damage, int speed) {
         this.hp=hp;
@@ -52,6 +53,7 @@ public class Jet extends Actor
         spawnJet();
         shoot();
         getDamage();
+        spawnBoss();
     }
     public void shoot(){
         if(CD.millisElapsed()<rateOfFire*100)
@@ -68,13 +70,21 @@ public class Jet extends Actor
         
     }
     public void spawnJet(){
-        if(spawn.millisElapsed()<1000-round*2)
+        if(spawnJet.millisElapsed()<1000-round*2)
         {
             return;
         }
         MyWorld world = (MyWorld) getWorld();
         world.spawnEnemy(Greenfoot.getRandomNumber(400));
-        spawn.mark();
+        spawnJet.mark();
+    }
+    public void spawnBoss(){
+        if(round>=20*boss)
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnBoss();
+            boss+=2; 
+        }  
     }
     public void getDamage(){
         MyWorld world = (MyWorld) getWorld();

@@ -58,6 +58,10 @@ public class MyWorld extends World {
         EnemyJetOne Enemy1 = new EnemyJetOne(damage,round);
         addObject(Enemy1,x,0);
     }
+    public void spawnBoss(){
+        Boss boss = new Boss();
+        addObject(boss,200,0);
+    }
     public void setHp(int x){
         currentHp=x;
         Hp.setValue(x);
