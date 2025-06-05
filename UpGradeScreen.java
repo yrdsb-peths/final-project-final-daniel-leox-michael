@@ -103,7 +103,7 @@ public class UpGradeScreen extends World
             }
         }
         if (x==buttun[4]){
-            if (numOfJet2 < 5)
+            if (numOfJet2 < 4)
             {
                 numOfJet2++;
             }
