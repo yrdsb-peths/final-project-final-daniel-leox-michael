@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class startGameButton extends Actor
 {
-    GreenfootSound backgroundSound = new GreenfootSound("5528.mp3");
+    GreenfootSound backgroundSound = new GreenfootSound("backgroundSound2.mp3");
     /**
      * Act - do whatever the startGameButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

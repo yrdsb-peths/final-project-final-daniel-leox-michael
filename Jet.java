@@ -13,7 +13,7 @@ public class Jet extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootSound shootSoundEffect = new GreenfootSound("shootSound.mp3");
-    GreenfootSound backgroundSound = new GreenfootSound("5533.mp3");
+    GreenfootSound backgroundSound = new GreenfootSound("backgroundSound.mp3");
     SimpleTimer spawnJet = new SimpleTimer();
     SimpleTimer CD = new SimpleTimer();
     int hp;
