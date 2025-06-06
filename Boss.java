@@ -12,11 +12,22 @@ public class Boss extends Enemy
      * Act - do whatever the Boss wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    SimpleTimer spawnJet = new SimpleTimer();
+    
     public void act()
     {
         setImage("images/final6.png");
         GreenfootImage image = getImage();
         image.scale(100, 100);
         setImage(image);
+        spwan();
+    }
+    public void spwan(){
+        if(spawnJet.millisElapsed()<5000){
+            return;
+        }
+        MyWorld world = (MyWorld) getWorld();
+        world.spawnEnemy(Greenfoot.getRandomNumber(400));
+        spawnJet.mark();
     }
 }
