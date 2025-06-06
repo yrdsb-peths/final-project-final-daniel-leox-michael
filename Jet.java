@@ -63,7 +63,7 @@ public class Jet extends Actor
         if (Greenfoot.isKeyDown("Space")){
             shootSoundEffect.play();
             MyWorld world = (MyWorld) getWorld();
-            world.shootBillet(getX());
+            world.shootBullet(getX());
             CD.mark();
             
         }

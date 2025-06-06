@@ -44,7 +44,7 @@ public class Jet2 extends Actor
         }
         if (Greenfoot.isKeyDown("Space")){
             MyWorld world = (MyWorld) getWorld();
-            world.shootBillet(getX());
+            world.shootBullet(getX());
             CD.mark();
         }
     }

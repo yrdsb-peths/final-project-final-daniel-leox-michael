@@ -66,46 +66,58 @@ public class MyWorld extends World {
             addObject(jet2[i], 220+50*i*x, 650);
         }
     }
-    public void shootBillet(int x){
+    // Spawn the bullets
+    public void shootBullet(int x){
         Bullet bullet = new Bullet();
         addObject(bullet,x,600);
     }
+    // Spawn the enemy bullets
     public void shootEnemyBillet(int x, int y){
         EnemyBullet bullet = new EnemyBullet();
         addObject(bullet,x,y);
     }
+    // Spawn the enemy
     public void spawnEnemy(int x){
         EnemyJetOne Enemy1 = new EnemyJetOne(damage,round);
         addObject(Enemy1,x,0);
     }
+    // Spawn the boss
     public void spawnBoss(){
         Boss boss = new Boss();
         addObject(boss,200,0);
     }
+    // Set up hp
     public void setHp(int x){
         currentHp=x;
         Hp.setValue(x);
     }
+    // Connect to the end screen
     public void end(){
         EndScreen end = new EndScreen(totalCoin,hp,rateOfFire,damage,speed,numOfJet2);
         Greenfoot.setWorld(end);
     }
+    // Add coins
     public void addCoin(){
         totalCoin++;
         Coin.setValue(totalCoin);
     }
+    // Set current hp
     public void setCurrentHp(int hp){
         currentHp=hp;
     }
+    // Get current hp
     public int getCureentHp(){
         return currentHp;
     }
+    // Get hp
     public int getHp(){
         return hp;
     }
+    // Add round
     public void addRound(){
         round++;    
     }
+    // Return round
     public int returnRound(){
         return round;    
     }
