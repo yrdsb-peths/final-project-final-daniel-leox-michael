@@ -1,18 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class UpGradeScreen here.
+ * The player can up grade the hp, fire rate, damage, and speed of the main jet
+ * and add small jet beside the main jet to help fight.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/6/2025
  */
 public class UpGradeScreen extends World
 {
-
-    /**
-     * Constructor for objects of class UpGradeScreen.
-     * 
-     */
+    // Define variables
     static int coin;
     static int numOfJet2;
     static int hp;
@@ -25,16 +22,18 @@ public class UpGradeScreen extends World
     RestartGame restartGame;
     public UpGradeScreen(int coin,int hp,int rateOfFire,int damage,int speed,int numOfJet2)
     {    
-        
         // Create a new world with 400x750 cells with a cell size of 1x1 pixels.
         super(400, 750, 1); 
+        
+        // Take datas from other worlds
         this.hp=hp;
         this.coin=coin;
         this.rateOfFire=rateOfFire;
         this.damage=damage;
         this.speed=speed;
-        //setBackground("UpGradeScreenBackground.png");
         this.numOfJet2= numOfJet2;
+        
+        // Add the restart button
         restartGame = new RestartGame(coin,hp,rateOfFire,damage,speed,numOfJet2);
         addObject(restartGame,200,580);
         setUp();
@@ -81,6 +80,7 @@ public class UpGradeScreen extends World
     public static void upGrade(PropertyUpGradeButton x){
         // Add 20 hp when the first button is pressed
         if (x==buttun[0]){
+            // Create a maximum number of hp for up grade
             if (hp < 100)
             {
                 hp+=20;
@@ -88,31 +88,43 @@ public class UpGradeScreen extends World
         }
         // Add fire rate when the second button is pressed
         if (x==buttun[1]){
+            // Create a maximum number of fire rate for up grade
             if (rateOfFire > 1)
             {
             rateOfFire--;
             }
         }
+        // Add 1 damage when the third button is pressed
         if (x==buttun[2]){
-            damage++;
+            // Create a maximum number of damage for up grade
+            if (damage < 10)
+            {
+                damage++;
+            }
         }  
+        // Add 1 speed when the fourth button is pressed
         if (x==buttun[3]){
+            // Create a maximum number of speed for up grade
             if (speed < 10)
             {
                 speed++;
             }
         }
+        // Add a small jet beside the main jet when the last button is pressed
         if (x==buttun[4]){
+            // Create a maximum number of small jet for up grade
             if (numOfJet2 < 4)
             {
                 numOfJet2++;
             }
         }
     }
+    // Run the code
     public void act(){
         setUp();
         restartGame = new RestartGame(coin,hp,rateOfFire,damage,speed,numOfJet2);
     }
+    // Set up hp, fire rate, damage, speed, and add jets
     public void setUp(){
         hp();
         rate();
@@ -120,6 +132,7 @@ public class UpGradeScreen extends World
         speed();
         jet2();
     }
+    // When the hp up grade button is pressed, add a green block to tell the player it up graded
     public void hp(){
         int checkUpGrade = hp/20;
         for(int i=0; i<5;i++){
@@ -134,6 +147,7 @@ public class UpGradeScreen extends World
             }
         }
     }
+    // When the fire rate up grade button is pressed, add a green block to tell the player it up graded
     public void rate(){
         int checkUpGrade = rateOfFire-5;
         for(int i=0; i<5;i++){
@@ -148,6 +162,7 @@ public class UpGradeScreen extends World
             }
         }
     }
+    // When the damage up grade button is pressed, add a green block to tell the player it up graded
     public void damage(){
         int checkUpGrade = damage;
         for(int i=0; i<5;i++){
@@ -162,6 +177,7 @@ public class UpGradeScreen extends World
             }
         }
     }
+    // When the speed up grade button is pressed, add a green block to tell the player it up graded
     public void speed(){
         int checkUpGrade = speed;
         for(int i=0; i<5;i++){
@@ -176,6 +192,7 @@ public class UpGradeScreen extends World
             }
         }
     }
+    // When the add jets up grade button is pressed, add a green block to tell the player it up graded
     public void jet2(){
         int checkUpGrade = numOfJet2;
         for(int i=0; i<5;i++){
