@@ -1,22 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class NPCJet here.
+ * The small Jets 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, and Michael
+ * @version 6/6/2025
  */
 public class Jet2 extends Actor
 {
-    /**
-     * Act - do whatever the NPCJet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    // Define variables
     int rateOfFire;
     int damge;
     int speed;
     SimpleTimer CD = new SimpleTimer();
     public Jet2(int rateOfFire,int damge, int speed) {
+        // Take datas from other worlds
         this.rateOfFire=rateOfFire;
         this.damge=damge;
         this.speed=speed;

@@ -1,20 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GreenBlock here.
+ * The up grade green blocks
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/9/2025
  */
 public class GreenBlock extends Actor
 {
-    /**
-     * Act - do whatever the GreenBlock wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
-        // Add your action code here.
+        // Create green blocks for up grade (for player to know they up graded).
         GreenfootImage image = new GreenfootImage(20, 20);
         image.setColor(Color.GREEN);
         image.fillRect(0, 0, 100, 50);

@@ -1,22 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Green here.
+ * The hp bar
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/9/2025
  */
 public class Green extends Actor
 {
-    /**
-     * Act - do whatever the Green wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    // Define variables
     int hp;
     double currentHp;
     public void act()
     {
-        // Add your action code here.
+        // Create a green bar for the hp display in the game
         MyWorld world = (MyWorld) getWorld();
         hp = world.getHp();
         currentHp = world.getCureentHp();

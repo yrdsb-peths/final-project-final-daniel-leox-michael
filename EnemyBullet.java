@@ -12,14 +12,18 @@ public class EnemyBullet extends Actor
     boolean newSpawn = true;
     public void act()
     {
+        // Set bullet image
         setImage("images/final7.png");
         if (newSpawn){
+            // Run method checkPosition
             checkPosition();
             newSpawn=false;
         }
+        // Set speed of the bullets
         move(10);
-        // Add your action code here.
     }
+    
+    // 
     public void checkPosition(){
         Jet jet = (Jet) getWorld().getObjects(Jet.class).get(0);
         turnTowards(jet.getX(), jet.getY());
