@@ -82,8 +82,8 @@ public class MyWorld extends World {
         addObject(Enemy1,x,0);
     }
     // Spawn the boss
-    public void spawnBoss(){
-        Boss boss = new Boss();
+    public void spawnBoss(int x, int y){
+        Boss boss = new Boss(x,y);
         addObject(boss,200,0);
     }
     // Set up hp

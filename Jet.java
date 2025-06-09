@@ -82,7 +82,7 @@ public class Jet extends Actor
         if(round>=20*boss)
         {
             MyWorld world = (MyWorld) getWorld();
-            world.spawnBoss();
+            world.spawnBoss(damage,boss);
             boss+=2; 
         }  
     }
