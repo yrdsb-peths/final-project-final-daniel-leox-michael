@@ -1,21 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Coin here.
+ * The coin image
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/9/2025
  */
 public class Coin extends Actor
 {
-    /**
-     * Act - do whatever the Coin wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
+        // Set coin image
         setImage("coin.png");
         GreenfootImage image = getImage();
+        
+        // Set the size
         image.scale(50, 50);
         setImage(image);
     }

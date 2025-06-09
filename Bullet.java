@@ -1,20 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * The bullet of the fighter.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/9/2025
  */
 public class Bullet extends Actor
 {
-    /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
     public void act()
     {
+        // Set bullet image and location
         setImage("images/final1.png");
         setLocation(getX(),getY()-5);
     }

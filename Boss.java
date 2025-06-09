@@ -1,17 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Boss here.
+ * The boss
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/9/2025
  */
 public class Boss extends Enemy
 {
-    /**
-     * Act - do whatever the Boss wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     SimpleTimer spawnJet = new SimpleTimer();
     
     public void act()
@@ -20,6 +17,8 @@ public class Boss extends Enemy
         GreenfootImage image = getImage();
         image.scale(100, 100);
         setImage(image);
+        
+        // Run spawn
         spwan();
     }
     public void spwan(){
