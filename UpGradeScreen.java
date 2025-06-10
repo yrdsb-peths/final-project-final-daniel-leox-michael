@@ -33,6 +33,8 @@ public class UpGradeScreen extends World
         this.speed=speed;
         this.numOfJet2= numOfJet2;
         
+        setBackground("upGradeScreenBackground.jpg");
+        
         // Add the restart button
         restartGame = new RestartGame(coin,hp,rateOfFire,damage,speed,numOfJet2);
         addObject(restartGame,200,580);
