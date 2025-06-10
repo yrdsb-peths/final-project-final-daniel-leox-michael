@@ -52,8 +52,8 @@ public class RestartGame extends Actor
                 UpGradeScreen world = (UpGradeScreen) getWorld();
                 world.stopSound();
             }
-            MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed,numOfJet2);
-            Greenfoot.setWorld(upGradeScreen);
+            MyWorld game = new MyWorld(coin,hp,rateOfFire,damge,speed,numOfJet2);
+            Greenfoot.setWorld(game);
             
         }
     }

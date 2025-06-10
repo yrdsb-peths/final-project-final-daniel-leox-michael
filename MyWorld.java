@@ -24,6 +24,7 @@ public class MyWorld extends World {
         super(400, 750, 1, false);
         
         // Take datas from other worlds
+        totalCoin =coin;
         this.hp=hp;
         this.numOfJet2=numOfJet2;
         this.rateOfFire=rateOfFire;

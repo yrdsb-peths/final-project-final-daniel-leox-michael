@@ -16,11 +16,18 @@ public class UpGradeScreen extends World
     static int rateOfFire;
     static int damage;
     static int speed;
+    static int numOfJet2Level;
+    static int hpLevel;
+    static int rateOfFireLevel;
+    static int damageLevel;
+    static int speedLevel;
     static GreenBlock[] greenBlock = new GreenBlock[25];
     static RedBlock[] redBlock = new RedBlock[25];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
     RestartGame restartGame;
+    static Label coinRequire5;
     GreenfootSound backgroundSound = new GreenfootSound("5528.mp3");
+    static Label Coin;
     public UpGradeScreen(int coin,int hp,int rateOfFire,int damage,int speed,int numOfJet2)
     {    
         // Create a new world with 400x750 cells with a cell size of 1x1 pixels.
@@ -80,55 +87,64 @@ public class UpGradeScreen extends World
         // Add speed label into up grade world
         Label label4 = new Label("Add jets", 30);
         addObject(label4,85,520);
-        
         // Add five up grade buttons
         for(int i=0; i<5;i++){
             buttun[i] = new PropertyUpGradeButton();
             addObject(buttun[i], 80,80+100*i);
         }
+        Coin coins = new Coin();
+        addObject(coins,35,670);
+        Coin = new Label(coin,45);
+        addObject(Coin,100,670);
     }
     
     public static void upGrade(PropertyUpGradeButton x){
         // Add 20 hp when the first button is pressed
-        if (x==buttun[0]){
+        if (x==buttun[0] && coin-20>=0){
             // Create a maximum number of hp for up grade
             if (hp < 100)
             {
                 hp+=20;
+                coin-=20;
             }
         }
         // Add fire rate when the second button is pressed
-        if (x==buttun[1]){
+        if (x==buttun[1] && coin-20>=0){
             // Create a maximum number of fire rate for up grade
             if (rateOfFire > 1)
             {
-            rateOfFire--;
+                rateOfFire--;
+                coin-=20;
             }
         }
         // Add 1 damage when the third button is pressed
-        if (x==buttun[2]){
+        if (x==buttun[2] && coin-20>=0){
             // Create a maximum number of damage for up grade
             if (damage < 10)
             {
                 damage++;
+                coin-=20;
             }
         }  
         // Add 1 speed when the fourth button is pressed
-        if (x==buttun[3]){
+        if (x==buttun[3] && coin-20>=0){
             // Create a maximum number of speed for up grade
             if (speed < 10)
             {
                 speed++;
+                coin-=20;
             }
         }
         // Add a small jet beside the main jet when the last button is pressed
-        if (x==buttun[4]){
+        if (x==buttun[4] && coin-40>=0){
             // Create a maximum number of small jet for up grade
             if (numOfJet2 < 4)
             {
                 numOfJet2++;
+                coin-=20;
             }
         }
+        Coin.setValue(coin);
     }
     // Run the code
     public void act(){
@@ -151,6 +167,7 @@ public class UpGradeScreen extends World
                 greenBlock[i] = new GreenBlock();
                 addObject(greenBlock[i], 150+i*50,80);
                 checkUpGrade--;
+                hpLevel++;
             }
             else{
                 redBlock[i] = new RedBlock();
@@ -166,6 +183,7 @@ public class UpGradeScreen extends World
                 greenBlock[i+4] = new GreenBlock();
                 addObject(greenBlock[i+4], 150+i*50,180);
                 checkUpGrade++;
+                rateOfFireLevel++;
             }
             else{
                 redBlock[i+4] = new RedBlock();
@@ -181,6 +199,7 @@ public class UpGradeScreen extends World
                 greenBlock[i+8] = new GreenBlock();
                 addObject(greenBlock[i+8], 150+i*50,280);
                 checkUpGrade--;
+                damageLevel++;
             }
             else{
                 redBlock[i+8] = new RedBlock();
@@ -196,6 +215,7 @@ public class UpGradeScreen extends World
                 greenBlock[i+12] = new GreenBlock();
                 addObject(greenBlock[i+12], 150+i*50,380);
                 checkUpGrade--;
+                speedLevel++;
             }
             else{
                 redBlock[i+12] = new RedBlock();
@@ -211,6 +231,7 @@ public class UpGradeScreen extends World
                 greenBlock[i+16] = new GreenBlock();
                 addObject(greenBlock[i+16], 150+i*50,480);
                 checkUpGrade--;
+                numOfJet2Level++;
             }
             else{
                 redBlock[i+16] = new RedBlock();
