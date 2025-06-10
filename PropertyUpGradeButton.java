@@ -1,23 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PropertyUpGradeButton here.
+ * Press the button to upp grade
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/10/2025
  */
 public class PropertyUpGradeButton extends Actor
 {
-    /**
-     * Act - do whatever the PropertyUpGradeButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
-        // Add your action code here.
+        // Set up grade image
         setImage("images/final3.png");
         GreenfootImage image = getImage();
+        // Set size
         image.scale(75, 50);
+        
+        // Mouse click to up grade
         if(Greenfoot.mouseClicked(this)){
             UpGradeScreen world = (UpGradeScreen) getWorld();
             UpGradeScreen.upGrade(this);

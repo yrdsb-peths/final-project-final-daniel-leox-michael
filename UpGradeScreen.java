@@ -54,6 +54,10 @@ public class UpGradeScreen extends World
         speed spd = new speed();
         addObject(spd,30,380);
         
+        // Add addjets image into up grade world
+        AddJets AJ = new AddJets();
+        addObject(AJ,30,480);
+        
         // Add HP label into up grade world
         Label label = new Label("HP", 30);
         addObject(label,85,120);
@@ -69,6 +73,10 @@ public class UpGradeScreen extends World
         // Add speed label into up grade world
         Label label3 = new Label("Speed", 30);
         addObject(label3,85,420);
+        
+        // Add speed label into up grade world
+        Label label4 = new Label("Add jets", 30);
+        addObject(label4,85,520);
         
         // Add five up grade buttons
         for(int i=0; i<5;i++){

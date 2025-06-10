@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * hp image
+ * HP image
  * 
  * @author Leo, Daniel, Michael
  * @version 6/9/2025

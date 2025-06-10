@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- *  Fire rate symbol image
+ *  Add Jets symbol image
  * 
  * @author Leo, Daniel, Michael
  * @version 6/10/2025
  */
-public class fireRate extends Actor
+public class AddJets extends Actor
 {
     public void act()
     {
         // Set image
-        setImage("fireRate.png");
+        setImage("addJets.png");
         GreenfootImage image = getImage();
         // Image size
         image.scale(50, 50);

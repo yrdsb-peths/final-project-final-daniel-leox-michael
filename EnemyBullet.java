@@ -23,7 +23,7 @@ public class EnemyBullet extends Actor
         move(10);
     }
     
-    // 
+    // Check player position
     public void checkPosition(){
         Jet jet = (Jet) getWorld().getObjects(Jet.class).get(0);
         turnTowards(jet.getX(), jet.getY());

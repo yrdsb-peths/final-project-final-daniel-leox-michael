@@ -1,25 +1,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class startGameButton here.
+ * The button that can start the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/9/2025
  */
 public class startGameButton extends Actor
 {
+    // Set background sound
     GreenfootSound backgroundSound = new GreenfootSound("backgroundSound2.mp3");
-    /**
-     * Act - do whatever the startGameButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
+        // Set the button image
         setImage("startGameButton.png");
         GreenfootImage image = getImage();
+        // Button size
         image.scale(300, 50);
         setImage(image);
+        
+        // Play the sound
         backgroundSound.play();
+        
+        // Mouse click to go to MyWorld(actual game)
         if(Greenfoot.mouseClicked(this))
         {
             backgroundSound.stop();

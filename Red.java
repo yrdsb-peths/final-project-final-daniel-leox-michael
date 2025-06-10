@@ -1,20 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Rad here.
+ * The red bar for hp
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/10/2025
  */
 public class Red extends Actor
 {
-    /**
-     * Act - do whatever the Rad wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
-        // Add your action code here.
+        // Create the red bar to show the hp bar
         MyWorld world = (MyWorld) getWorld();
         GreenfootImage image = new GreenfootImage(200, 20);
         image.setColor(Color.RED);

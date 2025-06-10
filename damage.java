@@ -1,21 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class damage here.
+ * Damage symbol image
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/6/2025
  */
 public class damage extends Actor
 {
-    /**
-     * Act - do whatever the damage wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
+        // Set image
         setImage("damage.png");
         GreenfootImage image = getImage();
+        // Image size
         image.scale(50, 50);
         setImage(image);
     }

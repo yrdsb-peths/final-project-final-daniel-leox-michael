@@ -1,24 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class upGradeButton here.
+ * The button that can go to up grade screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Leo, Daniel, Michael
+ * @version 6/10/2025
  */
 public class UpGradeButton extends Actor
 {
-    /**
-     * Act - do whatever the upGradeButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
-        // Add your action code here.
+        // Set image
         setImage("upGradeButton.png");
         GreenfootImage image = getImage();
+        // Image size
         image.scale(300, 100);
         setImage(image);
+        
+        // Mouse click the button go to up grade screen
         if(Greenfoot.mouseClicked(this))
         {
             EndScreen world = (EndScreen) getWorld();
