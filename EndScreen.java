@@ -17,6 +17,7 @@ public class EndScreen extends World
     static int damage;
     static int speed;
     static int numOfJet2;
+    GreenfootSound backgroundSound = new GreenfootSound("5528.mp3");
     public EndScreen(int coinGetInThisRound, int hp,int rateOfFire,int damage,int speed,int numOfJet2)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -54,5 +55,12 @@ public class EndScreen extends World
     public static void goUpGradeScreen(){
         UpGradeScreen upGradeScreen = new UpGradeScreen(coin,hp,rateOfFire,damage,speed,numOfJet2);
         Greenfoot.setWorld(upGradeScreen);
+    }
+    //play and stop backgrounnd sound
+    public void playSound(){
+        backgroundSound.play();
+    }
+    public void stopSound(){
+        backgroundSound.stop();
     }
 }

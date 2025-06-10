@@ -16,10 +16,12 @@ public class UpGradeButton extends Actor
         // Image size
         image.scale(300, 100);
         setImage(image);
-        
+        EndScreen worldEnd = (EndScreen) getWorld();
+        worldEnd.playSound();
         // Mouse click the button go to up grade screen
         if(Greenfoot.mouseClicked(this))
         {
+            worldEnd.stopSound();
             EndScreen world = (EndScreen) getWorld();
             world.goUpGradeScreen();
         }

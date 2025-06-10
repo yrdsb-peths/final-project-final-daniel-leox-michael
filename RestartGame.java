@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class RestartGame extends Actor
 {
     // Define variables
-    GreenfootSound backgroundSound = new GreenfootSound("5528.mp3");
     static int coin;
     static int hp;
     static int rateOfFire;
@@ -35,16 +34,27 @@ public class RestartGame extends Actor
         // Set size
         image.scale(300, 50);
         setImage(image);
-        
-        // Play background sound
-        backgroundSound.play();
-        
+        // play background sound
+        if (this.getWorld().getClass() == UpGradeScreen.class)
+            {
+                UpGradeScreen world = (UpGradeScreen) getWorld();
+                world.playSound();
+            }
         // Mouse click to go to the actual game from up grade screen and end screen.
         if(Greenfoot.mouseClicked(this))
         {
+            if (this.getWorld().getClass() == EndScreen.class)
+            {
+                EndScreen world = (EndScreen) getWorld();
+                world.stopSound();
+            }else if (this.getWorld().getClass() == UpGradeScreen.class)
+            {
+                UpGradeScreen world = (UpGradeScreen) getWorld();
+                world.stopSound();
+            }
             MyWorld upGradeScreen = new MyWorld(coin,hp,rateOfFire,damge,speed,numOfJet2);
             Greenfoot.setWorld(upGradeScreen);
-            backgroundSound.stop();
+            
         }
     }
 }

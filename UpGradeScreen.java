@@ -20,6 +20,7 @@ public class UpGradeScreen extends World
     static RedBlock[] redBlock = new RedBlock[25];
     static PropertyUpGradeButton[] buttun = new PropertyUpGradeButton[5];
     RestartGame restartGame;
+    GreenfootSound backgroundSound = new GreenfootSound("5528.mp3");
     public UpGradeScreen(int coin,int hp,int rateOfFire,int damage,int speed,int numOfJet2)
     {    
         // Create a new world with 400x750 cells with a cell size of 1x1 pixels.
@@ -216,5 +217,12 @@ public class UpGradeScreen extends World
                 addObject(redBlock[i+16], 150+i*50,480);
             }
         }
+    }
+     //play and stop backgrounnd sound
+    public void playSound(){
+        backgroundSound.play();
+    }
+    public void stopSound(){
+        backgroundSound.stop();
     }
 }

@@ -11,6 +11,7 @@ public class Boss extends Enemy
     // Define variables
     SimpleTimer spawnJet = new SimpleTimer();
     SimpleTimer CD = new SimpleTimer();
+    SimpleTimer Move = new SimpleTimer();
     int hp;
     int damage;
     public Boss(int damage, int round){
@@ -31,6 +32,7 @@ public class Boss extends Enemy
         spwan();
         shoot();
         damage();
+        randomMove();
     }
     // Spawn enemies
     public void spwan(){
@@ -72,5 +74,21 @@ public class Boss extends Enemy
                 world.addRound();
             }
         }
+    }
+    // random move
+    public void randomMove(){
+        if(Move.millisElapsed()<6500)
+        {
+            return;
+        }
+        int position = Greenfoot.getRandomNumber(400);
+        while(getX()!=position){
+            if (getX()>position){
+                setLocation(getX()-1, getY());
+            }else{
+                setLocation(getX()+1, getY());
+            }
+        }
+        Move.mark();
     }
 }
