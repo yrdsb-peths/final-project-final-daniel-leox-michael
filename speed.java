@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Leo, Daniel, Michael
  * @version 6/10/2025
  */
-public class speed extends Actor
+public class Speed extends Actor
 {
     public void act()
     {

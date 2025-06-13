@@ -29,7 +29,7 @@ public class StartScreen extends World
         addObject(label1,200,450);
         
         // A start game button
-        startGameButton startGameButton = new startGameButton();
+        StartGameButton startGameButton = new StartGameButton();
         addObject(startGameButton,187,517);
         startGameButton.setLocation(197,550);
     }

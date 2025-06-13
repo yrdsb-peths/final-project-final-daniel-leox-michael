@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Leo, Daniel, Michael
  * @version 6/9/2025
  */
-public class startGameButton extends Actor
+public class StartGameButton extends Actor
 {
     // Set background sound
     GreenfootSound backgroundSound = new GreenfootSound("backgroundSound2.mp3");

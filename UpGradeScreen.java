@@ -53,15 +53,15 @@ public class UpGradeScreen extends World
         addObject(hP,30,80);
         
         // Add fire rate into up grade world
-        fireRate FR = new fireRate();
+        FireRate FR = new FireRate();
         addObject(FR,25,180);
         
         // Add damage image into up grade world
-        damage dmg = new damage();
+        Damage dmg = new Damage();
         addObject(dmg,30,280);
         
         // Add speed image into up grade world
-        speed spd = new speed();
+        Speed spd = new Speed();
         addObject(spd,30,380);
         
         // Add addjets image into up grade world
